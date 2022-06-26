@@ -1,0 +1,12 @@
+.alignres{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.registerform{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+}
