@@ -10,6 +10,7 @@ export default function Order() {
         {items.map((obj) => (
         <div key={obj.id}>
           <h3>{obj.name}</h3>
+          <img src={obj.photo} />
         </div>
       ))}
       <h1>Total:{cartTotal}</h1>
@@ -22,7 +23,8 @@ export default function Order() {
     {userService.isAdmin()?<>
     <input type="text" value={orderstatus} onChange={(e)=>{
         setstatus(e.target.value)
-    }}/>
+    }}>
+    /</input>
     </>:<></>}
     
     </>

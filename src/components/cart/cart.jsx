@@ -8,6 +8,7 @@ export default function Cart() {
     {items.length>0?<>
         {items.map((obj) => (
         <div key={obj.id}>
+          <img src={obj.photo} />
           <h3>{obj.name}</h3>
           <h6>{obj.price}</h6>
           <p>Quanitiy :{obj.quantity}</p>

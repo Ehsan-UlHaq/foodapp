@@ -18,6 +18,7 @@ import Showres from './components/restaurants/showres';
 import Items from './components/items/allitem';
 import Cart from './components/cart/cart';
 import Order from './components/cart/order';
+import Additem from './components/items/additem';
 function App() {
   return (
     <div >
@@ -34,6 +35,7 @@ function App() {
         <Route path="restaurants/:id" element={<Showres />} /> 
         <Route path="restaurants_signup" element={<RestaurantsSignup />} />
         <Route path="items" element={<Items />} /> 
+        <Route path="additem" element={<Additem />} />
         <Route path="restaurants_login" element={<Loginres />} />
         <Route  path="*" element={<Notfound />} />
       </Routes>

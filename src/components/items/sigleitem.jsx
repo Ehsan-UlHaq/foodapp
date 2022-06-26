@@ -8,6 +8,7 @@ export default function Sigleitem({data}) {
     let item={
         id:data._id,
         name:data.name,
+        photo:data.photo,
         price:data.price,
         restaurantid:data.restaurantid,
         customerid:userid

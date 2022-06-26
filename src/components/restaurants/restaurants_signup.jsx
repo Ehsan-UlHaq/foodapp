@@ -12,6 +12,7 @@ export default function RestaurantsSignup() {
   const[services,setservices]=useState("")
   const[username,setusername]=useState("")
   const[password,setpassword]=useState("")
+  //for image upload
   const[photo,setUrl]=useState("")
   const [{ alt, src }, setImg] = useState({
     src: "",
@@ -38,7 +39,7 @@ export default function RestaurantsSignup() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.url);
         setUrl(data.url);
         // console.log(url);
       })
@@ -46,13 +47,14 @@ export default function RestaurantsSignup() {
         console.log(err);
       });
   };
+  ///yahan tak image input
   const handleregister=()=>{
-    // restaurantService.register(name,phone,address,cuisine,services,"photo123",email,username,password).then((res)=>{
+    restaurantService.register(name,phone,address,cuisine,services,photo,email,username,password).then((res)=>{
       console.log(photo)
-      // window.location.href = "/";
-    // }).catch((err)=>{
-    //   console.log(err)
-    // })
+      window.location.href = "/";
+    }).catch((err)=>{
+      console.log(err)
+    })
   }
   // if (e.target.files[0]) {
   //   setImg({
@@ -72,7 +74,7 @@ export default function RestaurantsSignup() {
         <Form.Control type="file" accept='.png, .jpg, .jpeg ' onChange={handleImg} placeholder="email" />
       </Form.Group>
       <Form.Group as={Col} controlId="formGridPassword">
-      <Button variant="primary" onClick={handleregister}>
+      <Button variant="primary" onClick={postdetials}>
      Upload
     </Button>
       </Form.Group>

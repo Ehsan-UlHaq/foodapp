@@ -5,8 +5,8 @@ class itemService extends GenericService {
     }
 
     allitems=()=>this.get("items")
-    register = (name,phone,address,cuisine,services,photo,email,username,password) =>
-    this.post("resturnants", { name,phone,address,cuisine,services,photo,email,username,password});
+    additem = (name,photo,price,restaurantid) =>
+    this.post("items", {name,photo,price,restaurantid});
     getsingleres=(id)=>this.get("resturnants/"+id);
     // getsingle=(id)=>this.get("addfarmer/"+id);
     // deletefarmer=(id)=>this.delete("addfarmer/"+id);

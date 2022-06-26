@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import ItemService from '../../services/items'
 import Sigleitem from './sigleitem'
-import {Row} from 'react-bootstrap'
+import {Row,Button} from 'react-bootstrap'
 export default function Allitem() {
  const [items,setitems]=useState([])
  const [isloaded,setisloaded]=useState(false)
@@ -18,6 +18,9 @@ export default function Allitem() {
  useEffect(getitems,[])
   return (
     <>
+    <Button onClick={()=>{
+        window.location.href = "/additem";
+    }}>Add item</Button>
     {isloaded ? (
           <>
           <Row className='alignres'>
